@@ -27,39 +27,10 @@ void input()
 	}
 }
 
-int ConsultingProcess()
-{
-	// 최대 수익
-	int MAX_P = 0;
-	vector<int, int> caseT;
-
-	// 입력한 N에서 경우의 수를 살펴본다.
-	int i = 0;
-	while (i < N)
-	{
-		int temp_T = 0;
-		while (temp_T + T[temp_T] <= N)
-		{
-			caseT.push_back(T[temp_T]);
-			temp_T += T[temp_T];
-
-			if (temp_T >= N)
-				break;
-		}
-
-		i++;
-	}
-
-	return MAX_P;
-}
-
 
 int main()
 {
 	input();
 	
-	cout << ConsultingProcess() << endl;
-
-
 	return 0;
 }
