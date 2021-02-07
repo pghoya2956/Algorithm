@@ -37,7 +37,8 @@ void solution()
 int main()
 {
 	// 첫째 줄에 자연수 N(1 ≤ N ≤ 1,000,000)이 주어진다.
-	cin >> N;
+	while(N < 1 || N > 1000000)
+		cin >> N;
 	
 	solution();
 
