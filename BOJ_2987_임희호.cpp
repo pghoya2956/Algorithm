@@ -53,7 +53,7 @@ void input()
 	for (int i = 0; i < N; i++)
 	{
 		int value = -1;
-		while(value < 0 || value > 100000)
+		while(value < 0 || value > 100000 || value > M)
 			cin >> value;
 		card.push_back(value);
 	}
@@ -61,6 +61,10 @@ void input()
 
 void BlackjackProcess()
 {
+	// 카드 수 N, 목표 숫자 M, 카드 값이 결정된다.
+	input();
+
+	// Process
 	for (int i = 0; i < card.size() - 2; i++)
 	{
 		for (int j = i + 1; j < card.size() - 1; j++)
@@ -90,9 +94,7 @@ void output()
 
 int main()
 {
-	// 카드 수 N, 목표 숫자 M, 카드 값이 결정된다.
-	input();
-
+	// 어떤 3장의 카드도 조건을 만족하지 못한는 동안 반복한다.
 	while(sum == 0)
 		BlackjackProcess();
 
