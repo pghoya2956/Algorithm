@@ -6,12 +6,14 @@ using namespace std;
 int N = 0;
 int MIN_Constructor = 0;
 
+// 분해합을 생성하는 함수
 int Decomposition(int n)
 {
 	int result = 0;
 	string str = to_string(n);
 	for (int i = 0; i < str.size(); i++)
 	{
+		// 문자를 숫자로 바꾸는 방법
 		result += str[i] - '0';
 	}
 
@@ -22,8 +24,10 @@ void solution()
 {
 	for (int i = 1; i < N; i++)
 	{
+		// Decomposition의 결과가 N의 생성자라면
 		if (Decomposition(i) == N)
 		{
+			// 처음 발견된(가장 작은) 생성자가 결정 후 return
 			MIN_Constructor = i;
 			return;
 		}
