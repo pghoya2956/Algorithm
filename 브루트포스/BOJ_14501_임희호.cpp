@@ -30,13 +30,15 @@ int solution(int index)
 	// 수행 불가
 	if (nextIndex > N)
 		return 0;
-	// 수행하고 리턴
+	// 수행하고 리턴(값 판단은 호출 함수에서)
 	if (nextIndex == N)
 		return P[index];
 	
 	for (int i = nextIndex; i < N; i++)
 	{
+		// 현재 이익과 다음 일정의 이익을 더해서 저장하고
 		int temp = solution(i) + P[index];
+		// 현재까지 이익중 가장 큰 값을 저장한다.
 		value[index] = MAX(value[index], temp);
 	}
 
@@ -45,14 +47,18 @@ int solution(int index)
 
 int solution(int index, int Profit)
 {
+	// index값이 퇴사일과 같다면 현재까지 이익중 큰 값을 반환
 	if (index == N)
-		return MAX(answer, Profit + P[index]);
+		return MAX(answer, Profit);
 
+	// index값이 퇴사일 이후라면 0 반환
 	if (index > N)
 		return 0;
 
 	return MAX(
+		// 수행하고 수행한 날만큼 이동
 		solution(index + T[index], Profit + P[index]),
+		// 수행하지 않고 다음으로
 		solution(index + 1, Profit)
 	);
 }
