@@ -9,9 +9,8 @@ using namespace std;
 int N=0;
 vector<int> card;
 
-int M=0;
+int M = 0;
 int sum = 0;
-int selectCard[3] = { 0, };
 
 // 자동 입력
 /*

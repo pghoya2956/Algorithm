@@ -24,7 +24,7 @@ void solution()
 {
 	for (int i = 1; i < N; i++)
 	{
-		// Decomposition의 결과가 N의 생성자라면
+		// Decomposition(분해합)의 결과가 N의 생성자라면
 		if (Decomposition(i) == N)
 		{
 			// 처음 발견된(가장 작은) 생성자가 결정 후 return
