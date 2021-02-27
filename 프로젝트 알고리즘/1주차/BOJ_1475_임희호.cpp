@@ -9,7 +9,7 @@ int CardCase[9] = { 0, };
 
 int solution(int n)
 {
-	// 문자열로 변환해서 해달 숫자의 카드의 개수를 추가한다. 
+	// 문자열로 변환해서 해당 숫자의 카드의 개수를 추가한다. 
 	string str = to_string(n);
 	for (int i = 0; i < str.size(); i++)
 	{

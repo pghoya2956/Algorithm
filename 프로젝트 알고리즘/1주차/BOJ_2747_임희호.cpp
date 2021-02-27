@@ -19,6 +19,7 @@ int Fibonacci(int n)
 	for (int i = 2; i <= n; i++)
 	{ 
 		result = Previous2 + Previous1;
+		// 다음 더할 두 수를 갱신
 		Previous2 = Previous1;
 		Previous1 = result;
 	}

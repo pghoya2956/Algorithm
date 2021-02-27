@@ -15,7 +15,7 @@ int main()
 	for (int i = 1; i < str.size(); i++)
 	{
 		// 하이픈 뒤의 문자를 출력, 마지막 문자가 하이픈이라면 무시
-		if (str[i] == '-' && i != str.size() -1)
+		if (str[i] == '-' && i != str.size() - 1)
 			cout << str[i + 1];
 	}
 }
