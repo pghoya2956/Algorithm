@@ -1,5 +1,5 @@
-// BOJ_
-// KB, ms
+// BOJ_2630
+// 2148KB, 0ms
 /*
 입력으로 주어진 종이의 한 변의 길이 N과 각 정사각형칸의 색(하얀색 또는 파란색)이 주어질 때 잘라진 하얀색 색종이와 파란색 색종이의 개수를 구하는 프로그램을 작성하시오.
 */
@@ -56,6 +56,7 @@ void MakeColoredPaper(int left, int up, int size)
 		return;
 	}
 
+	// 1사분면, 2사분면, 3사분면, 4사분면
 	MakeColoredPaper(left, up, size / 2);
 	MakeColoredPaper(left + size / 2, up, size / 2);
 	MakeColoredPaper(left, up + size / 2, size / 2);
