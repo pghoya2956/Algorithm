@@ -42,12 +42,14 @@ bool IsOne(int left, int up, int size)
 
 void QuadTree(int left, int up, int size)
 {
+	// 주어진 영상이 모두 0으로만 되어 있으면 압축 결과는 "0"이 되고
 	if (IsZero(left, up, size) == true)
 	{
 		cout << 0;
 		return;
 	}
 
+	// 모두 1로만 되어 있으면 압축 결과는 "1"이 된다.
 	if (IsOne(left, up, size) == true)
 	{
 		cout << 1;
@@ -60,8 +62,8 @@ void QuadTree(int left, int up, int size)
 	QuadTree(left, up, size / 2);
 	QuadTree(left + size / 2, up, size / 2);
 	QuadTree(left, up + size / 2, size / 2);
-	// 괄호 닫기
 	QuadTree(left + size / 2, up + size / 2, size / 2);
+	// 괄호 닫기
 	cout << ')';
 }
 
@@ -82,6 +84,7 @@ int main()
 		map[i] = s;
 	}
 
+	// 시작지점의 위치 x, y, 그리고 size
 	QuadTree(0, 0, N);
 
 	return 0;

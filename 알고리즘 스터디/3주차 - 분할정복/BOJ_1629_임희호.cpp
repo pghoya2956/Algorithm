@@ -10,18 +10,18 @@ typedef long long ll;
 
 ll A, B, C;
 
-// 1. 나머지 연산자 규칙
-// A * B % C = (A % C) * (B % C) % C 
+// 1. 나머지 연산자 규칙 : 각각 %를 취한 후 다시 전체적으로 %를 구한다.
+// A * B % C = ((A % C) * (B % C)) % C 
 
 // 2. log(n)으로 거듭제곱을 수행할 수 있는 방법
-// b:짝수 : a^b = a^(b / 2) * a^(b / 2)
-// b:홀수 : a^b = a^(b / 2) * a^(b / 2) * a
+// b:짝수 : a^b = a^(b / 2) * a^(b / 2) = (a*a*a*....) * (a*a*a*....)
+// b:홀수 : a^b = a^(b / 2) * a^(b / 2) * a = (a*a*a*....) * (a*a*a*....) * a
 ll solution(ll A, ll B)
 {
 	if (B == 1)
 		return A % C;
 
-    // ex) B = 100, 50, 25, 12, 6, 3, 1
+	// ex) B = 100, 50, 25, 12, 6, 3, 1
 	ll temp = solution(A, B / 2);
 
 	if (B % 2 == 0)
