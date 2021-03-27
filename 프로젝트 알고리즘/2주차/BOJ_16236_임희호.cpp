@@ -160,7 +160,7 @@ void GameStart()
 		// 맵은 빈칸이 됨
 		map[shark._pos.first][shark._pos.second] = 0;
 
-		// 우선순위 큐도 초기화
+		// 우선순위 큐도 초기화(상어 위치가 달라졌기 때문)
 		while (!Candidate.empty())
 		{
 			Candidate.pop();

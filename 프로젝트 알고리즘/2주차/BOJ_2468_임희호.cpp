@@ -86,7 +86,7 @@ int main()
 	// 비의 양에 따른 모든 경우를 다 조사(1부터 시작하면 틀림)
 	for (int height = 0; height <= max_height; height++)
 	{
-		// 높이에 따라 잠기는 부분 체크
+		// 높이(height)에 따라 잠기는 부분 체크
 		for (int i = 0; i < N; i++)
 		{
 			for (int j = 0; j < N; j++)
