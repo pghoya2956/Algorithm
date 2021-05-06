@@ -1,5 +1,5 @@
-// BOJ_
-// KB, ms
+// BOJ_2467
+// 2408KB, 12ms
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -14,7 +14,7 @@ int main()
 	cin.tie(nullptr); cout.tie(nullptr);
 	ios::sync_with_stdio(false);
 
-	
+
 	// 첫째 줄에는 전체 용액의 수 N이 입력된다. N은 2 이상 100,000 이하의 정수이다. 
 	cin >> N;
 
@@ -26,22 +26,29 @@ int main()
 
 	int _min = INT32_MAX;
 	int L = 0, R = 0;
-	for (int i = 0; i < N; i++)
-	{
-		for (int j = i + 1; j < N; j++)
-		{
-			int temp = abs(v[i] + v[j]);
 
-			if (temp < _min)
-			{
-				_min = temp;
-				L = i;
-				R = j;
-			}
+	int low = 0;
+	int high = N - 1;
+	while (low < high)
+	{
+		int temp = abs(v[low] + v[high]);
+
+		if (temp < _min)
+		{
+			_min = temp;
+			L = low;
+			R = high;
 		}
+
+		if (abs(v[low + 1] + v[high]) < abs(v[low] + v[high - 1]))
+			low++;
+		else
+			high--;
 	}
 
 	cout << v[L] << " " << v[R] << '\n';
 
 	return 0;
 }
+
+
